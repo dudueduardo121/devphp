@@ -1,13 +1,9 @@
 <?php
-// arrays variaveis locais
-$produtos = array(
-	0=> array(
-		"nome" = >"",
-		"descricao"=>""
-	)
-	
-);
-print_r($produtos);
+// arrays variaveis globais
+
+$nome = $_GET["nome"];
+
+echo "Seu nome é: ".$nome;
 
 
 ?>
