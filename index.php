@@ -1,7 +1,13 @@
 <?php
-$nome = "Eduardo";
-
-echo "Meu nome é:".$nome;
+// arrays variaveis locais
+$produtos = array(
+	0=> array(
+		"nome" = >"",
+		"descricao"=>""
+	)
+	
+);
+print_r($produtos);
 
 
 ?>
