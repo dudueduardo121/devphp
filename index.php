@@ -15,7 +15,8 @@ if(isset($_GET['email']) && !empty($__GET['email']))
 } 
 ?>
 
-<form method="GET">
+<div class="container" style="margin-left: 250px; font-family: sans-serif; width: 200px;height: 200px; background-color: tomato; border-radius: 10px;">
+<form method="GET" style="padding: 10px;">
 EMAIL:</br>
 	<input type="text" name="email"><br><br>
 SENHA:</br>
@@ -23,3 +24,4 @@ SENHA:</br>
 	<input type="submit" value="ENVIAR DADOS">
 
 </form>
+</div>
