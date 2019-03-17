@@ -1,9 +1,14 @@
 <?php
-// arrays variaveis globais
+//Variaveis constantes
 
-$nome = $_GET["nome"];
+define("URL","http://www.lbca.com.br");
 
-echo "Seu nome é: ".$nome;
+
+echo "Meu site é:".URL;
+
+
+
+
 
 
 ?>
