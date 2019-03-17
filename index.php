@@ -1,21 +1,17 @@
 <?php
+// coneção com o banco de dados
 
-// gerar uma session
+$dsn = "mysql:dbname=cadastro;host=localhost";
+$dbuser = "root";
+$dbpass = "";
 
-	session_start();
-	$_SESSION["teste"] = "Eduardo";
+try{
+	$pdo = new PDO($dsn,$dbuser,$dbpass);
+	echo "conectado...";
 
-	echo "sessão realizada";
-
-	echo "Meu nome é: ".$_SESSION["teste"];
-
-
-// gerar um cookie
-	setcookie("meuteste", "fulano", time()+3600);
-
-	echo "cookie setado com sucesso";
-
-	echo "meu cookie é de:".$_COOKIE["meuteste"];
+}catch(PDOException $erro){
+	echo "Falha: ".$erro->getMessage();
+}
 
 
 ?>
