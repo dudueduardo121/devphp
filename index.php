@@ -1,21 +1,28 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>index</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
-<?php
-// Projeto ant f5
-//se o campo foi enviado
-if(isset($_POST['email'])){
+<body>
+ 
+ <form method="POST" action= "receber.php" id="formulario" >
+ <h1>Ficha de Cadastro para emprego.</h1>
+ 	Nome:<input type="text" name="nome"><br><br>
+ 	Email:<input type="email" name="email"><br><br>
+ 	Data de Nasc.<input type="date" name="data"><br><br>
+ 	Cargo:<select name="cargo">
+ 		<option>Ajudante</option>
+	    <option>Conferente</option>  
+	    <option>Gerente</option>  
+ 	      </select><br><br>
+ 	      <input type="submit" name="Enviar">
+ </form>
+ 
+</body>
+</html>
 
-	$email = $_POST['email'];
-	// cria um arquivo dentro dele 
-	file_put_contents("text.txt",$email, FILE_APPEND);
-	//redireciona para mesma pagina apos o f5 clicado
-	header("Location: index.php");
-}
 
-?>
-<link REL="SHORTCUT ICON" HREF="/favicon.ico">
-<form method="POST">
-	<input type="text" name="email"><br>
 
-	<input type="submit" value="Enviar">
 
-</form>
