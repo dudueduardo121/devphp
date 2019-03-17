@@ -1,14 +1,21 @@
 <?php
 
-// introdução a criptografia
+// gerar uma session
 
-$nome = "edu";
-$nome2 = md5($nome);
-$nome3 = base64_encode($nome);
+	session_start();
+	$_SESSION["teste"] = "Eduardo";
 
-echo "nome original: ".$nome. "</br>";
-echo "nome criptografado inrevercivel: ".$nome2. "</br>";
-echo "nome criptografado: ".$nome3;
+	echo "sessão realizada";
+
+	echo "Meu nome é: ".$_SESSION["teste"];
+
+
+// gerar um cookie
+	setcookie("meuteste", "fulano", time()+3600);
+
+	echo "cookie setado com sucesso";
+
+	echo "meu cookie é de:".$_COOKIE["meuteste"];
 
 
 ?>
