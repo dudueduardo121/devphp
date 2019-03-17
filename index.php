@@ -1,6 +1,6 @@
 
 <?php
-// verificção senha formulario php
+// verificção senha formulario php  
 if(isset($_GET['email']) && !empty($__GET['email']))
 {
 	If(isset($__GET['senha']) && !empty($__GET['senha']))
