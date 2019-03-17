@@ -1,9 +1,10 @@
 <?php
-if(isset($_POST['email']) && !empty($_POST['email']))
-{
-	$email = $_POST['email'];
-	echo "O meu email eh : ".$email;
-}
+extract($_POST);
 
+ $nome = array("nome" =>$nome, "email" =>$email, "data" =>$data, "cargo" =>$cargo);
+
+foreach($nome as $candidato) {
+	echo $candidato. "<br>";
+} 
 
 ?>

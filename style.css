@@ -1,8 +1,16 @@
-div{
+body{
 	margin: 0;
 	padding: 0;
 	width: 500px;
 	height: 250px;
 	background-color: tomato;
 	font-family: sans-serif;
+}
+#formulario{
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	float: left;
+	background-color: #fff;
+
 }
