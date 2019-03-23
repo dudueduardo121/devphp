@@ -18,16 +18,18 @@ $dbpass = "";
 
 try{
 	$pdo = new PDO($dsn,$dbuser,$dbpass);
-// Excluir dados do banco
+//bindValue para não usar variaveis dentro da query
+	$nome = 'Pedro';
+	$id = 12;
 
-	$sql= "DELETE FROM usuarios WHERE id = 11";
+	$sql = "UPDATE usuarios SET nome_usuario = :nome WHERE id=:id";
 
-	$pdo->query($sql);
+	$sql = $pdo->prepare($sql);
+	$sql->bindValue(':nome',$nome);
+	$sql->bindValue(':id',$id);
+	$sql->execute();
 
-	echo "usuario deletado";
-	
-
-
+	echo "usuario atualizado";
 
 }catch(PDOException $erro){
 	echo "Falha: ".$erro->getMessage();
