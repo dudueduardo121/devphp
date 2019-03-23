@@ -18,13 +18,14 @@ $dbpass = "";
 
 try{
 	$pdo = new PDO($dsn,$dbuser,$dbpass);
-// update na tabela do banco
-	$new_Senha = md5("1");
+// Excluir dados do banco
 
-	$sql = "UPDATE usuarios SET senha = '$new_Senha' WHERE id = '1211' ";
+	$sql= "DELETE FROM usuarios WHERE id = 11";
+
 	$pdo->query($sql);
 
-	echo "usuario atualizado";
+	echo "usuario deletado";
+	
 
 
 
