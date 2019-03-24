@@ -1,43 +1,30 @@
 <?php
-/*
-// coneção com o banco de dados
-$mysqli_connection = new MySQLi('localhost','root','','cadastro');
-
-if($mysqli_connection->connect_error){
-	echo "Desconectado! Erro:" .$mysqli_connection->connect_error;
-}else{
-	echo "Conectado!";
-}
-*/
-
- //CONEXÃO VIA PDO.
-
-$dsn = "mysql:dbname=cadastro;host=localhost";
-$dbuser = "root";
-$dbpass = "";
-
-try{
-	$pdo = new PDO($dsn,$dbuser,$dbpass);
-//bindValue para não usar variaveis dentro da query
-	$nome = 'Pedro';
-	$id = 12;
-
-	$sql = "UPDATE usuarios SET nome_usuario = :nome WHERE id=:id";
-
-	$sql = $pdo->prepare($sql);
-	$sql->bindValue(':nome',$nome);
-	$sql->bindValue(':id',$id);
-	$sql->execute();
-
-	echo "usuario atualizado";
-
-}catch(PDOException $erro){
-	echo "Falha: ".$erro->getMessage();
-}
-
-
+require 'conexao_banco.php';
 ?>
+<a href="incluir_novo.php">Novo usuario</a>
+<table width="100%">
+	<tr>
+		<th>id</th>
+		<th>nome</th>
+		<th>Ações</th>
+	</tr>
+	<?php
+	$sql = "SELECT * FROM usuarios";
+	$sql = $pdo->query($sql);
 
+	if($sql->rowCount() > 0){
+		foreach ($sql->fetchALL() as $usuario) {
+			echo '<tr>';
+			echo '<td>'.$usuario['id'].'</td>';
+			echo '<td>'.$usuario['nome_usuario'].'</td>';
+			echo '<td><a href="editar_dados.php?id='.$usuario['id'].'">Editar</a> - <a href="excluir_dados.php?id='.$usuario['id'].'">Excluir</a></td>';
+			echo '</tr>';
+
+		}
+	}
+	?>
+	
+</table>
 
 
 
